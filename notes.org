@@ -1,0 +1,5 @@
+<2023-06-02 Fri>
+
+* TODO make a trim function
+* TODO make overloaded functions for dl.media class
+
