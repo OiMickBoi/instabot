@@ -1,13 +1,10 @@
-from instagrapi import Client
 from data import login as cred
-from dl import Media as stuff
+from dl import Media as dl
 
-cl = Client()
-cl.login(cred.getUserName(), cred.getPassword())
+photo = "https://www.instagram.com/p/CiMYkEXuNAJ/"
+video = "https://www.instagram.com/p/CsJbKHno1cR/"
+album = "https://www.instagram.com/p/CsghdUhL573/"
 
-# stuff.get_album("https://www.instagram.com/p/CsghdUhL573/", "tmp/itzy_album")
-
-media = cl.photo_upload(
-    "tmp/itzy_album/itzy.all.in.us_3107630885783749734.jpg",
-    "CHOI JISU! And Yej",
-)
+dl.get_photo(photo, "tmp")
+dl.get_video(video, "tmp")
+dl.get_album(album, "tmp/itzy_album")

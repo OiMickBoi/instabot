@@ -5,14 +5,6 @@ from data import login as cred
 cl = Client()
 cl.login(cred.getUserName(), cred.getPassword())
 
-# photo_url = "https://www.instagram.com/p/CsodehWrLgm/"
-# video_url = "https://www.instagram.com/p/Cs9MIW2gcsx/"
-# #album_url = "https://www.instagram.com/p/Csq3CN1S74a/"
-# album_url = "https://www.instagram.com/p/CsghdUhL573/"
-
-# photo_pk = cl.media_pk_from_url(photo_url)
-# video_pk = cl.media_pk_from_url(video_url)
-# album_pk = cl.media_pk_from_url(album_url)
 def check_path(path):
     """
     Checks to make sure the file path exists, and
@@ -34,7 +26,7 @@ def convert_url(url):
     return cl.media_pk_from_url(url)
 
 class Media:
-    def get_video(media_pk, path):
+    def get_video(url):
         """
         Downloads a instagram video from a given url.
         :media_pk: the media_pk 
@@ -42,20 +34,22 @@ class Media:
         """
         print("Downloading video...")
         print("Downloaded video!")
-        return cl.video_download(media_pk, folder='tmp')
+        return cl.video_download(convert_url(url), folder='tmp')
 
-    def get_video(media_pk, ):
+    def get_video(url, path):
         """
         Downloads a instagram video from a given url.
-        :media_pk: the media_pk 
+        :media_pk: the media_pk
+        :path: path to download file
         :returns the path the file is saved at.
         """
+        check_path(path)
+
         print("Downloading video...")
         print("Downloaded video!")
-        return cl.video_download(media_pk, folder='tmp')
+        return cl.video_download(convert_url(url), folder='tmp')
 
-
-    def get_photo(media_pk):
+    def get_photo(url):
         """
         Downloads a instagram photo from a given url
         :media_pk: the media_pk
@@ -63,37 +57,40 @@ class Media:
         """
         print("Downloading photo...")
         print("Downloaded photo!")
-        return cl.photo_download(media_pk, folder='tmp')
+        return cl.photo_download(convert_url(url), folder='tmp')
 
-    def get_album(media_pk):
+    def get_photo(url, path):
+        """
+        Downloads a instagram photo from a given url
+        :media_pk: the media_pk
+        :path: path to download file
+        :returns: the path the file is saved at.
+        """
+        check_path(path)
+
+        print("Downloading photo...")
+        print("Downloaded photo!")
+        return cl.photo_download(convert_url(url), folder='tmp')
+
+    def get_album(url):
         """
         Downloads a instagram album from a given url
         :media_pk: the media_pk
         :returns: the path the file is saved at.
         """
-        #Download album
         print("Downloading album...")
         print("Downloaded album!")
-        return cl.album_download(media_pk, folder=album_path)
+        return cl.album_download(convert_url(url), folder=album_path)
 
     def get_album(url, path):
         """
         Downloads a instagram album from a given url
         :media_pk: the media_pk
+        :path: path to download file
         :returns: the path the file is saved at.
         """
-        # Make sure path exist
         check_path(path)
         
-        #Download album
         print("Downloading album...")
         print("Downloaded album!")
         return cl.album_download(convert_url(url), folder=path)
-
-    
-
-# print(get_photo(photo_pk))
-# print(get_video(video_pk))
-# print(get_album(album_pk))
-
-# get_album("https://www.instagram.com/p/CsghdUhL573/", "tmp/itzy_album")
