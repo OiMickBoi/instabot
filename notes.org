@@ -1,5 +1,23 @@
 <2023-06-02 Fri>
 
-* TODO make a trim function
-* TODO make overloaded functions for dl.media class
-
+* DONE make a trim function
+* DONE make overloaded functions for dl.media class
+  
+<2023-06-05 Mon>
+* DONE make a function that randomly inserts a emoji.
+* TODO update download file so its methods take in a client object
+  
+* TODO Modify download program to use proxy and find content w/o logging into account
+* TODO make a function to download all saved posts or sent posts
+the idea here is to have me look for funny posts and save them. then the bot will
+automatically download them.
+* TODO follow for follow bot
+follow people and then store them in a priority queue based on time. the people
+have have been in the queue the longest will be the first to unfollow. We want to use
+a priority queue instead of a normal queue so that way a week or so of time will pass
+before we unfollow. that way we don't follow and immediately unfollow.
+* TODO Make a program that finds the "trending" instagram posts in a certain theme
+* TODO Make a proxy server 
+* TODO scrape a comment to use as text
+* TODO deal with ig_albums
+maybe just reupload entire album for now.

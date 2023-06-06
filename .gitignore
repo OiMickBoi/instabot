@@ -3,3 +3,6 @@ junk
 /test
 /tmp
 /__pycache__
+/env
+tags
+/tests
