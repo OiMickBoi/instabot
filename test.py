@@ -1,9 +1,9 @@
 from instagrapi import Client
 
 cl = Client()
-USERNAME="delightfuly_cringy_memez"
-PASSWORD="@Pokemon4ever1085"
-# cl.login (USERNAME, PASSWORD) 
+USERNAME=""
+PASSWORD=""
+# cl.login (USERNAME, PASSWORD)
 # cl.dump_settings("session.json")
 
 cl.load_settings("session.json")
